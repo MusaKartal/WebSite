@@ -1,0 +1,66 @@
+﻿@model LavenderHome.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Details</h1>
+<div class="main-div">
+    <div>
+        <h4>Product</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Photo)
+            </dt>
+            <dd>
+                @if (Model.Photo != null)
+                {
+                    <img src="~/ProductImages/@Model.Photo" style="width: 125px; margin-right: 10px;" />
+                }
+                else
+                {
+                    <img src="~/ProductImages/NullPhoto.webp" style="width: 125px; margin-right: 10px;" />
+                }
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Role)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Role)
+            </dd>
+        </dl>
+
+    </div>
+    <div>
+
+        <a class="btn btn-primary my-2 btnStyle1 float-end" asp-action="Edit" asp-route-id="@Model.Id">Güncelle</a>
+        <form method="post" asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="Photo" />
+            <div>
+                <button name="Button" type="submit" class="btn btn-primary my-2 btnStyle1 float-end" style="width: 50%;">Sil</button>
+            </div>
+        </form>
+
+    </div>
+</div>

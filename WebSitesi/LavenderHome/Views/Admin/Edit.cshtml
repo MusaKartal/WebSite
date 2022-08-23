@@ -1,0 +1,65 @@
+﻿@model LavenderHome.Models.Product
+
+@{
+    ViewData["Title"] = "Edit";
+       Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="main-div">
+    <h1>Ürün Güncelleme</h1>
+    <hr />
+    <div class="form-img">
+        <img id="output" class="rounded float-left  card-img" alt="">
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Edit" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="Photo" />
+                <div class="form-group ">
+                    <label> Foto</label>
+                    <input type="file" name="file" asp-for="Photo" accept="image/*" onchange="loadFile(event)" class="form-control" />
+                    <span asp-validation-for="Photo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price" class="control-label"></label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="Role" type="radio" value="Terzi" name="Role" />Terzi<br />
+                    <input asp-for="Role" type="radio" value="Temizleme" name="Role" />Kuru Temizleme<br />
+                    <input asp-for="Role" type="radio" value="Anasayfa" name="Role" />Anasayfa<br />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        <script>
+            var loadFile = function (event) {
+                var output = document.getElementById('output');
+                output.src = URL.createObjectURL(event.target.files[0]);
+                output.onload = function () {
+                    URL.revokeObjectURL(output.src) // free memory
+                }
+            };
+
+        </script>
+    }

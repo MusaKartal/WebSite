@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-LavenderHome-A9664032-705D-429F-AB83-8A241FA171A9</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20220707102417_ProductV3.cs" />
+    <Compile Remove="Data\Migrations\20220707102417_ProductV3.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220707102834_ProductV3.cs" />
+    <Compile Remove="Data\Migrations\20220707102834_ProductV3.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\fonts\cochin.woff2" />
+    <None Include="wwwroot\fonts\cochinbold_italic.woff2" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\images\.DS_Store" />
+    <None Include="wwwroot\images\logo\turutlogo.pdf" />
+    <None Include="wwwroot\js\revolution\.DS_Store" />
+    <None Include="wwwroot\js\revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-strokebb1d.svg" />
+    <None Include="wwwroot\js\revolution\fonts\revicons\revicons90c6.svg" />
+    <None Include="wwwroot\js\revolution\js\.DS_Store" />
+    <None Include="wwwroot\js\revolution\js\extensions\revolution.extension.actions.min.js" />
+    <None Include="wwwroot\js\revolution\js\extensions\revolution.extension.carousel.min.js" />
+    <None Include="wwwroot\js\revolution\js\extensions\revolution.extension.kenburn.min.js" />
+    <None Include="wwwroot\js\revolution\js\extensions\revolution.extension.layeranimation.min.js" />
+    <None Include="wwwroot\js\revolution\js\extensions\revolution.extension.migration.min.js" />
+    <None Include="wwwroot\js\revolution\js\extensions\revolution.extension.navigation.min.js" />
+    <None Include="wwwroot\js\revolution\js\extensions\revolution.extension.parallax.min.js" />
+    <None Include="wwwroot\js\revolution\js\extensions\revolution.extension.slideanims.min.js" />
+    <None Include="wwwroot\js\revolution\js\extensions\revolution.extension.video.min.js" />
+    <None Include="wwwroot\js\revolution\js\jquery.themepunch.revolution.min.js" />
+    <None Include="wwwroot\js\revolution\js\jquery.themepunch.tools.min.js" />
+    <None Include="wwwroot\js\site.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.26" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.25" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.25" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.25" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.26">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+</Project>
